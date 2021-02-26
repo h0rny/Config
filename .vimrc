@@ -40,9 +40,13 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"After in vim run :plugininstall 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'hashivim/vim-terraform'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 map <C-o> :NERDTreeToggle<CR>
