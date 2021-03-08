@@ -11,10 +11,17 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+" save undo trees in files
+set undofile
+set undodir=~/.vim/undo
+
+" number of undo saved
+set undolevels=10000
+
 set autoindent
 " " turn on syntax highlighting
 syntax on 
-set number 
+" set number 
 set relativenumber 
 
 " Ignore case when searching
@@ -47,9 +54,24 @@ Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin settings  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 map <C-o> :NERDTreeToggle<CR>
+
+" For vim-gittgutter
+let g:gitgutter_sign_added = '➕'
+let g:gitgutter_sign_modified = '✔'
+let g:gitgutter_sign_removed = '➖'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '~_'
+" let g:gitgutter_highlight_lines = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -61,3 +83,16 @@ function! HasPaste()
     endif
     return ''
 endfunction
+
+" Turn on/off number 
+function! NumberToggle()
+  if(&rnu == 1)
+    set nornu nonu 
+    GitGutterToggle
+  else
+    set rnu 
+    GitGutterToggle
+  endif
+endfunc
+
+nnoremap <C-l> :call NumberToggle()<cr>
