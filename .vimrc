@@ -56,6 +56,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+"Plug 'mhinz/vim-signify'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 
@@ -73,6 +75,16 @@ let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '~_'
 " let g:gitgutter_highlight_lines = 1
 
+" For vim-airline
+set ttimeoutlen=50
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
