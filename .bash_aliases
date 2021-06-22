@@ -31,3 +31,7 @@ alias fgrep='fgrep --color=auto'
 
 ## network
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+
+## docker
+alias d="sudo docker"
