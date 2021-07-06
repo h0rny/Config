@@ -1,3 +1,6 @@
+## Directory
+alias cdw='cd ~/Documents/work/'
+
 ## vim 
 if ! command -v vim &> /dev/null; then alias vim="vi"; fi
 
@@ -35,3 +38,11 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 ## docker
 alias d="sudo docker"
+
+
+## ansible
+alias ap="ansible-playbook"
+alias a="ansible"
+
+##terraform 
+alias t="terraform"
