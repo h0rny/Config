@@ -33,7 +33,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 ## network
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ipl="dig +short myip.opendns.com @resolver1.opendns.com"
 
 
 ## docker
@@ -46,3 +46,8 @@ alias a="ansible"
 
 ##terraform 
 alias t="terraform"
+
+
+##systemd
+alias sctlr='systemctl restart'
+alias sctls="systemctl status" 

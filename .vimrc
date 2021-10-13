@@ -32,6 +32,14 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch
 
+" set scrolloff=7
+
+" set jk for esc
+inoremap jk <esc>
+
+
+" trun off search highlight
+nnoremap ,<space> :nohlsearch<CR>
 
 """"""""""""""""""""""""""""""
 " => Status line
