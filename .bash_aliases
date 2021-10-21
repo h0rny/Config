@@ -4,6 +4,9 @@ alias cdw='cd ~/Documents/work/'
 ## vim 
 if ! command -v vim &> /dev/null; then alias vim="vi"; fi
 
+## ssh
+alias sshk='ssh -o "StrictHostKeyChecking=no"'
+
 ## git
 alias ga='git add' 
 alias gs='git status'

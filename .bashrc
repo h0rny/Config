@@ -3,7 +3,8 @@ export TERM="xterm-256color"                      # getting proper colors
 export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
 export HISTSIZE=100000
 export HISTFILESIZE=2000000
-
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+export HISTIGNORE="ls:ll:history:w:htop:pwd"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

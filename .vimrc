@@ -58,7 +58,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 " for work need run npm i prettier
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+"#Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,3 +101,8 @@ function! NumberToggle()
 endfunc
 
 nnoremap <C-l> :call NumberToggle()<cr>
+
+
+
+" zfz
+set rtp+=/opt/homebrew/opt/fzf
