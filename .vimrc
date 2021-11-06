@@ -37,6 +37,10 @@ set incsearch
 " set jk for esc
 inoremap jk <esc>
 
+" set mouse on 
+set mouse=a
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " trun off search highlight
 nnoremap ,<space> :nohlsearch<CR>

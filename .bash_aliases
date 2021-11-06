@@ -55,3 +55,7 @@ alias t="terraform"
 ##systemd
 alias sctlr='systemctl restart'
 alias sctls="systemctl status" 
+
+
+## ipython
+alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
