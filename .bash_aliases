@@ -51,7 +51,6 @@ alias a="ansible"
 ##terraform 
 alias t="terraform"
 
-
 ##systemd
 alias sctlr='systemctl restart'
 alias sctls="systemctl status" 
