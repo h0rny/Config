@@ -68,6 +68,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'chase/vim-ansible-yaml' 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 " for work need run npm i prettier
 "#Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
