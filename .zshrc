@@ -112,7 +112,7 @@ source /usr/local/Cellar/fzf/0.26.0/shell/completion.zsh
 source ~/.key-bindings.zsh
 source ~/.bash_aliases  
 
-source ~/config/set-tmux-title.sh
+#source ~/config/set-tmux-title.sh
 
 
 complete -o nospace -C /usr/local/bin/terraform terraform

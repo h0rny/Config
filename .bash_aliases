@@ -1,8 +1,9 @@
 ## Directory
-alias cdw='cd ~/Documents/work/'
+alias cdw='cd ~/Documents/work/insystemplus'
 
 ## vim 
 if ! command -v vim &> /dev/null; then alias vim="vi"; fi
+if command -v nvim &>/dev/null; then alias vim="nvim"; fi 
 
 ## ssh
 alias sshk='ssh -o "StrictHostKeyChecking=no"'
@@ -41,7 +42,7 @@ alias ipl="dig +short myip.opendns.com @resolver1.opendns.com"
 
 
 ## docker
-alias d="sudo docker"
+alias d="docker"
 
 
 ## ansible

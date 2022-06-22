@@ -74,6 +74,23 @@ Plug 'chase/vim-ansible-yaml'
 "#Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
+if has('nvim')
+        call plug#begin('~/.config/nvim/autoload/plugged')
+        Plug 'scrooloose/nerdtree'
+        Plug 'hashivim/vim-terraform'
+        Plug 'tpope/vim-commentary'
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+        Plug 'junegunn/fzf.vim'
+        Plug 'airblade/vim-gitgutter'
+        Plug 'github/copilot.vim'
+        Plug 'vim-airline/vim-airline'
+        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+        " post install (yarn install | npm install) then load plugin only for editing supported files
+        " for work need run npm i prettier
+        "#Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+        call plug#end()
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -91,6 +108,8 @@ let g:gitgutter_sign_modified_removed = '~_'
 " For vim-autoformat
 noremap <C-a> :Prettier<CR>
 
+" For coopilot
+let g:copilot_node_command = "~/.nodenv/versions/17.9.1/bin/node"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
