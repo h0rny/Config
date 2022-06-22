@@ -67,7 +67,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf docker)
+plugins=(git fzf docker kubectl ansible)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bash_aliases
@@ -98,6 +98,11 @@ source $HOME/.bash_aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+
+#export PATH
 
 
 #alias gitcpbr='git branch -a | grep -v HEAD | perl -ne 'chomp($_); s|^\*?\s*||; if (m|(.+)/(.+)| && not $d{$2}) {print qq(git branch --track $2 $1/$2\n)} else {$d{$_}=1}' | csh -xfs'
@@ -107,16 +112,27 @@ set -o vi
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /sbin/terraform terraform
 
-source /usr/local/Cellar/fzf/0.26.0/shell/key-bindings.zsh
-source /usr/local/Cellar/fzf/0.26.0/shell/completion.zsh
+source /usr/local/Cellar/fzf/0.30.0/shell/key-bindings.zsh
+source /usr/local/Cellar/fzf/0.30.0/shell/completion.zsh
 source ~/.key-bindings.zsh
 source ~/.bash_aliases  
 
-#source ~/config/set-tmux-title.sh
+source ~/config/set-tmux-title.sh
 
 
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+if [ -f '/Users/artem/yandex-cloud/completion.zsh.inc' ]; then source '/Users/artem/yandex-cloud/completion.zsh.inc'; fi
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
